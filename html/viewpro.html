@@ -1,0 +1,108 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>User Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .profile-container {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile-picture {
+            text-align: center;
+        }
+
+        .profile-picture img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+        }
+
+        .profile-details {
+            margin-top: 20px;
+        }
+
+        .profile-details h2 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .profile-details p {
+            font-size: 16px;
+        }
+    </style> 
+</head>-->
+<body>
+    <form action="view" method="post">
+        {% csrf_token %}
+        {% for ls in view %}
+        <div class="column">
+            <div class="card">
+            <h1>View Profile</h1>
+            
+            <h2>Username:</h2>
+            <p id="username"></p>
+            <h1>{{ls.uname}}</h1>
+
+            <h2>Email:</h2>
+            <p id="email"></p>
+            <h1>{{ls.email}}</h1>
+
+            <h2>Address:</h2>
+            <p id="address"><br></p>
+            <h1>{{ls.address}}</h1>
+
+            <h2>Picture</h2>
+            <p id="picture"><br></p>
+            <h1>{{ls.picture}}</h1>
+            
+            </div>
+        {% endfor %}
+        </div>
+        
+    </form>
+    <script>
+        document.getElementById("username").textContent ="";
+        document.getElementById("email").textContent ="";
+        document.getElementById("address").textContent ="";
+        document.getElementById("picture").textContent ="";
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+<!-- <form action="view"method="post">
+    {% csrf_token %}
+    <table border="2px solid">
+        <thead>
+            <th>User Name:</th>
+            <th>Email:</th>
+            <th>Address:</th>
+            <th>Picture:</th>
+        </thead>
+        <tbody>
+            {% for m in data %}
+            <tr>
+                <td>{{m.un}}</td>
+                <td>{{m.em}}</td>
+                <td>{{m.ads}}</td>
+                <td>{{m.pic}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</form> -->
